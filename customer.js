@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     host: "localhost",
     port: '3306',
     user: "root",
-    password: ".!.KPdA",
+    password: "",
     database: "bamazon"
   });
 
@@ -15,4 +15,3 @@ connection.connect(function(err) {
     console.log("you are connected!")
 })
 
-// make table function
