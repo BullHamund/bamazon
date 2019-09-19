@@ -6,13 +6,13 @@ var connection = mysql.createConnection({
     host: "localhost",
     port: '3306',
     user: "root",
-    password: ".!.KPdA",
+    password: "",
     database: "bamazon"
 });
 
 connection.connect(function (err) {
     if (err) throw err;
-    console.log("you are connected!")
+    //console.log("you are connected!")
     displayItems();
 })
 
@@ -40,7 +40,7 @@ function promptCustomer() {
         {
             name: "Quantity",
             type: "input",
-            message: "How many icopies would you like?",
+            message: "How many copies would you like?",
             filter: Number
         },
     ]).then(function (answers) {
@@ -62,7 +62,7 @@ function purchaseOrder(ID, quantity) {
             console.log("Still available!");
             console.log("Your total cost for " + quantity + " " + res[0].product_name + " is " + totalCost + " Thank you!");
 
-            connection.query("UPDATE products SET stock_quantity = stock_quantity - " + quantity + " WHERE item_id = " + ID);
+            connection.query("UPDATE products SET stock_quantity = stock_quantity - " + quantity + "    WHERE item_id = " + ID);
         } else {
             console.log("Sorry, we do not have that many " + res[0].product_name + " to complete your order.");
         };
