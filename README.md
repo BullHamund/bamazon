@@ -14,3 +14,4 @@
 * MySQL
 * Inquirer
 
+https://asciinema.org/a/5YcqI0IrXq50t15xAV8sE3IUr
